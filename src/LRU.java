@@ -16,17 +16,17 @@ public class LRU extends ReplacementAlgorithm {
         for (int i : array) {
             if (!a.contains(i)) {
                 if (a.size() == capacity) {
-                    a.remove(i);
+                    a.remove(0);
                     a.add(capacity - 1, i);
-                    page_swaps++;
                 } else {
                     a.add(count, i);
                     pageFaultCount++;
                     ++count;
                 }
             } else {
-                a.remove(i);
+                a.remove( (Object) i );
                 a.add(a.size(), i);
+                page_swaps++;
             }
         }
     }
