@@ -21,7 +21,6 @@ public class Test
 		System.out.print("Number of page frames: ");
 		page_frames = scanner.nextInt();
 
-		/////////////////////////////////////////////////////////////////
 		PageGenerator ref = new PageGenerator(page_size); //Integer(args[0])
 
 		int[] referenceString = ref.getReferenceString();
@@ -35,10 +34,10 @@ public class Test
 			lru.insert(referenceString[i]);
 		}
 
-		lru.algorithmn();
+		lru.algorithm();
 
 		// report the total number of page faults
 		System.out.println("LRU faults = " + lru.getPageFaultCount());
-		System.out.println("LRU Page Replacements = " );
+		System.out.println("LRU Page Replacements = " + lru.getPageSwaps());
 	}
 }
